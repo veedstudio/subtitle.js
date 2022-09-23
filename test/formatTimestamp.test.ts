@@ -1,4 +1,4 @@
-import { formatTimestamp } from '../src'
+import { formatTimestamp } from '../src/formatTimestamp'
 
 test.each([
   [120000 + 22000 + 542, '00:02:22,542'],

@@ -1,4 +1,5 @@
-import { FormatOptions, Node, Cue, formatTimestamp } from '.'
+import { FormatOptions, Node, Cue } from './types'
+import { formatTimestamp } from './formatTimestamp'
 
 export class Formatter {
   private options: FormatOptions
