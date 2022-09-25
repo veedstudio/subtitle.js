@@ -1,6 +1,6 @@
 {
   "name": "@veedstudio/subtitle",
-  "version": "4.2.1",
+  "version": "4.3.0",
   "description": "Library for parsing and manipulating subtitles",
   "repository": {
     "type": "git",
