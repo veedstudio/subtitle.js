@@ -1,5 +1,6 @@
 import stripBom from 'strip-bom'
-import { Node, RE_TIMESTAMP, parseTimestamps } from '.'
+import { Node } from './types'
+import { RE_TIMESTAMP, parseTimestamps } from './parseTimestamps'
 
 export type Pusher = (node: Node) => void
 

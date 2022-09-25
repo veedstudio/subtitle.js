@@ -1,6 +1,7 @@
 import stripBom from 'strip-bom'
 import { fixtures, getFixture } from '../test-utils'
-import { stringifySync, NodeList } from '../src'
+import { stringifySync } from '../src/stringifySync'
+import { NodeList } from '../src/types'
 
 const normalize = (str: string) => stripBom(str.replace(/\r\n/g, '\n'))
 

@@ -1,10 +1,10 @@
 {
-  "name": "subtitle",
+  "name": "@veedstudio/subtitle",
   "version": "4.2.1",
-  "description": "Stream-based library for parsing and manipulating subtitles",
+  "description": "Library for parsing and manipulating subtitles",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gsantiago/subtitle.js"
+    "url": "https://github.com/veedstudio/subtitle.js"
   },
   "keywords": [
     "subtitle",
@@ -18,12 +18,8 @@
     "stringify",
     "validate",
     "validation",
-    "stream",
-    "streams",
     "read",
-    "write",
-    "map",
-    "filter"
+    "write"
   ],
   "license": "MIT",
   "main": "dist/index.js",
@@ -69,9 +65,6 @@
     "verbose": true
   },
   "dependencies": {
-    "@types/multipipe": "^3.0.0",
-    "multipipe": "^4.0.0",
-    "split2": "^3.2.2",
     "strip-bom": "^4.0.0"
   }
 }

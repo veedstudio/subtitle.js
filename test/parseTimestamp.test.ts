@@ -1,4 +1,4 @@
-import { parseTimestamp } from '../src'
+import { parseTimestamp } from '../src/parseTimestamp'
 
 test.each([
   ['00:02:22,542', 120000 + 22000 + 542],
