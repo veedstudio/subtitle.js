@@ -34,7 +34,7 @@ export class Parser {
   }
 
   private isTimestamp(line: string): boolean {
-    return RE_TIMESTAMP.test(line)
+    return RE_TIMESTAMP.test(line.trim())
   }
 
   private isVttComment(line: string): boolean {
