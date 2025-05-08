@@ -4,7 +4,7 @@ import { Timestamp } from './types'
 export const RE_TIMESTAMP = /^((?:\d{1,}:)?\d{1,2}:\d{1,2}[,.]\d{1,3}) --> ((?:\d{1,}:)?\d{1,2}:\d{1,2}[,.]\d{1,3})(?: (.*))?$/
 
 export function parseTimestamps(value: string): Timestamp {
-  const match = RE_TIMESTAMP.exec(value)
+  const match = RE_TIMESTAMP.exec(value.trim())
 
   if (!match) {
     throw new Error('Invalid timestamp format')
