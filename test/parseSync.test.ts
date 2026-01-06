@@ -31,33 +31,33 @@ Welcome to the Planet.
     .concat('\n')
 
   expect(parseSync(srt)).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "data": Object {
-          "end": 7955489,
-          "start": 7954647,
-          "text": "Hi.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 7957758,
-          "start": 7956415,
-          "text": "Lois Lane.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 7960120,
-          "start": 7958584,
-          "text": "Welcome to the Planet.",
-        },
-        "type": "cue",
-      },
-    ]
-  `)
+[
+  {
+    "data": {
+      "end": 7955489,
+      "start": 7954647,
+      "text": "Hi.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 7957758,
+      "start": 7956415,
+      "text": "Lois Lane.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 7960120,
+      "start": 7958584,
+      "text": "Welcome to the Planet.",
+    },
+    "type": "cue",
+  },
+]
+`)
 })
 
 test('parse VTT captions', () => {
@@ -79,39 +79,39 @@ Welcome to the Planet.
     .concat('\n')
 
   expect(parseSync(vtt)).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "data": "WEBVTT - Test VTT cues",
-        "type": "header",
-      },
-      Object {
-        "data": Object {
-          "end": 755489,
-          "settings": "align:middle line:90%",
-          "start": 754647,
-          "text": "Hi.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 7957758,
-          "settings": "align:start line:90%",
-          "start": 756415,
-          "text": "Lois Lane.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 7960120,
-          "start": 7958584,
-          "text": "Welcome to the Planet.",
-        },
-        "type": "cue",
-      },
-    ]
-  `)
+[
+  {
+    "data": "WEBVTT - Test VTT cues",
+    "type": "header",
+  },
+  {
+    "data": {
+      "end": 755489,
+      "settings": "align:middle line:90%",
+      "start": 754647,
+      "text": "Hi.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 7957758,
+      "settings": "align:start line:90%",
+      "start": 756415,
+      "text": "Lois Lane.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 7960120,
+      "start": 7958584,
+      "text": "Welcome to the Planet.",
+    },
+    "type": "cue",
+  },
+]
+`)
 })
 
 test('parse VTT caption with headers', () => {
@@ -135,41 +135,41 @@ Welcome to the Planet.
     .concat('\n')
 
   expect(parseSync(vtt)).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "data": "WEBVTT - Test VTT cues
-    Kind: captions
-    Language: en-US",
-        "type": "header",
-      },
-      Object {
-        "data": Object {
-          "end": 755489,
-          "settings": "align:middle line:90%",
-          "start": 754647,
-          "text": "Hi.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 7957758,
-          "settings": "align:start line:90%",
-          "start": 756415,
-          "text": "Lois Lane.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 7960120,
-          "start": 7958584,
-          "text": "Welcome to the Planet.",
-        },
-        "type": "cue",
-      },
-    ]
-  `)
+[
+  {
+    "data": "WEBVTT - Test VTT cues
+Kind: captions
+Language: en-US",
+    "type": "header",
+  },
+  {
+    "data": {
+      "end": 755489,
+      "settings": "align:middle line:90%",
+      "start": 754647,
+      "text": "Hi.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 7957758,
+      "settings": "align:start line:90%",
+      "start": 756415,
+      "text": "Lois Lane.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 7960120,
+      "start": 7958584,
+      "text": "Welcome to the Planet.",
+    },
+    "type": "cue",
+  },
+]
+`)
 })
 
 // https://w3c.github.io/webvtt/#introduction-comments
@@ -201,31 +201,31 @@ NOTE end of file
     .concat('\n')
 
   expect(parseSync(vtt)).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "data": "WEBVTT - Test VTT Comments",
-        "type": "header",
-      },
-      Object {
-        "data": Object {
-          "end": 4000,
-          "start": 1000,
-          "text": "Never drink liquid nitrogen.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 9000,
-          "settings": "align:middle line:90%",
-          "start": 5000,
-          "text": "— It will perforate your stomach.
-    — You could die.",
-        },
-        "type": "cue",
-      },
-    ]
-  `)
+[
+  {
+    "data": "WEBVTT - Test VTT Comments",
+    "type": "header",
+  },
+  {
+    "data": {
+      "end": 4000,
+      "start": 1000,
+      "text": "Never drink liquid nitrogen.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 9000,
+      "settings": "align:middle line:90%",
+      "start": 5000,
+      "text": "— It will perforate your stomach.
+— You could die.",
+    },
+    "type": "cue",
+  },
+]
+`)
 })
 
 test('parse 00:00:00,000 caption', () => {
@@ -235,17 +235,17 @@ test('parse 00:00:00,000 caption', () => {
 Hi.
 `
   expect(parseSync(srt)).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "data": Object {
-          "end": 100,
-          "start": 0,
-          "text": "Hi.",
-        },
-        "type": "cue",
-      },
-    ]
-  `)
+[
+  {
+    "data": {
+      "end": 100,
+      "start": 0,
+      "text": "Hi.",
+    },
+    "type": "cue",
+  },
+]
+`)
 })
 
 test('parse text that contains only empty space', () => {
@@ -259,26 +259,26 @@ Something something something... dark side
 00:00:00,100 --> 00:00:00,200
 Hi.`
   expect(parseSync(srt)).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "data": Object {
-          "end": 100,
-          "start": 0,
-          "text": "Something something something... dark side
-     ",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 200,
-          "start": 100,
-          "text": "Hi.",
-        },
-        "type": "cue",
-      },
-    ]
-  `)
+[
+  {
+    "data": {
+      "end": 100,
+      "start": 0,
+      "text": "Something something something... dark side
+ ",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 200,
+      "start": 100,
+      "text": "Hi.",
+    },
+    "type": "cue",
+  },
+]
+`)
 })
 
 test('parse separated texts', () => {
@@ -293,27 +293,27 @@ Who else could they send?
 00:00:00,100 --> 00:00:00,200
 Who else could be trusted?`
   expect(parseSync(srt)).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "data": Object {
-          "end": 100,
-          "start": 0,
-          "text": "Dear Michael. Of course it's you.
+[
+  {
+    "data": {
+      "end": 100,
+      "start": 0,
+      "text": "Dear Michael. Of course it's you.
 
-    Who else could they send?",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 200,
-          "start": 100,
-          "text": "Who else could be trusted?",
-        },
-        "type": "cue",
-      },
-    ]
-  `)
+Who else could they send?",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 200,
+      "start": 100,
+      "text": "Who else could be trusted?",
+    },
+    "type": "cue",
+  },
+]
+`)
 })
 
 test('correctly parse captions with empty first lines', () => {
@@ -327,25 +327,25 @@ test('correctly parse captions with empty first lines', () => {
 00:00:00,100 --> 00:00:00,200
 Fora Bolsonaro`
   expect(parseSync(srt)).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "data": Object {
-          "end": 100,
-          "start": 0,
-          "text": "[Music]",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 200,
-          "start": 100,
-          "text": "Fora Bolsonaro",
-        },
-        "type": "cue",
-      },
-    ]
-  `)
+[
+  {
+    "data": {
+      "end": 100,
+      "start": 0,
+      "text": "[Music]",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 200,
+      "start": 100,
+      "text": "Fora Bolsonaro",
+    },
+    "type": "cue",
+  },
+]
+`)
 })
 
 test('indexes should be optional', () => {
@@ -364,33 +364,33 @@ Welcome to the Planet.
     .concat('\n')
 
   expect(parseSync(srt)).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "data": Object {
-          "end": 7955489,
-          "start": 7954647,
-          "text": "Hi.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 7957758,
-          "start": 7956415,
-          "text": "Lois Lane.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 7960120,
-          "start": 7958584,
-          "text": "Welcome to the Planet.",
-        },
-        "type": "cue",
-      },
-    ]
-  `)
+[
+  {
+    "data": {
+      "end": 7955489,
+      "start": 7954647,
+      "text": "Hi.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 7957758,
+      "start": 7956415,
+      "text": "Lois Lane.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 7960120,
+      "start": 7958584,
+      "text": "Welcome to the Planet.",
+    },
+    "type": "cue",
+  },
+]
+`)
 })
 
 test('invalid timestamps should throw an error', () => {
@@ -429,33 +429,33 @@ The most beautiful planet in the whole universe.
 `
 
   expect(parseSync(srt)).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "data": Object {
-          "end": 7955489,
-          "start": 7954647,
-          "text": "Hi.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 7957758,
-          "start": 7956415,
-          "text": "Lois Lane.",
-        },
-        "type": "cue",
-      },
-      Object {
-        "data": Object {
-          "end": 7960120,
-          "start": 7958584,
-          "text": "Welcome to the Planet.
-    To the Earth Planet.
-    The most beautiful planet in the whole universe.",
-        },
-        "type": "cue",
-      },
-    ]
-  `)
+[
+  {
+    "data": {
+      "end": 7955489,
+      "start": 7954647,
+      "text": "Hi.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 7957758,
+      "start": 7956415,
+      "text": "Lois Lane.",
+    },
+    "type": "cue",
+  },
+  {
+    "data": {
+      "end": 7960120,
+      "start": 7958584,
+      "text": "Welcome to the Planet.
+To the Earth Planet.
+The most beautiful planet in the whole universe.",
+    },
+    "type": "cue",
+  },
+]
+`)
 })
