@@ -459,3 +459,21 @@ The most beautiful planet in the whole universe.",
 ]
 `)
 })
+
+test('strips long blank-line runs around cue text in linear time', () => {
+  const blanks = '\n'.repeat(50_000)
+  const srt = `1\n00:00:00,000 --> 00:00:10,000\n${blanks}hello${blanks}\n\n2\n00:00:10,000 --> 00:00:20,000\nworld\n`
+  const start = Date.now()
+  const nodes = parseSync(srt)
+  expect(Date.now() - start).toBeLessThan(2_000)
+  expect(nodes).toHaveLength(2)
+  expect((nodes[0].data as { text: string }).text).toBe('hello')
+  expect((nodes[1].data as { text: string }).text).toBe('world')
+})
+
+test('keeps blank lines inside cue text', () => {
+  const srt = `1\n00:00:00,000 --> 00:00:10,000\nhello\n\nworld\n`
+  const nodes = parseSync(srt)
+  expect(nodes).toHaveLength(1)
+  expect((nodes[0].data as { text: string }).text).toBe('hello\n\nworld')
+})
