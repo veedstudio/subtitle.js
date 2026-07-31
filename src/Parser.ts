@@ -176,13 +176,16 @@ export class Parser {
         }
       }
 
-      while (true) {
-        const firstItem = this.state.buffer[0]
-        if (['', '\n'].includes(firstItem)) {
-          this.state.buffer.shift()
-        } else {
-          break
-        }
+      // A shift()-per-blank loop here is quadratic on long blank-line runs.
+      let firstNonBlank = 0
+      while (
+        firstNonBlank < this.state.buffer.length &&
+        ['', '\n'].includes(this.state.buffer[firstNonBlank])
+      ) {
+        firstNonBlank++
+      }
+      if (firstNonBlank > 0) {
+        this.state.buffer.splice(0, firstNonBlank)
       }
 
       this.state.node.data!.text = this.state.buffer.join('\n')
