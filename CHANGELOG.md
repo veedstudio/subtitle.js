@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.2] - 2026-08-03
+
+- Fix quadratic blank-line stripping in `Parser.pushNode` #8
+
 ## [4.2.1] - 2022-07-02
 
 - Add support for single digits in timestamps by @nbarnett

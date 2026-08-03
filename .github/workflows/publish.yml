@@ -1,0 +1,35 @@
+name: Publish
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Begin publish...
+        uses: actions/checkout@v5
+
+      - name: Use Node 18
+        uses: actions/setup-node@v5
+        with:
+          node-version: 18.x
+          registry-url: https://npm.pkg.github.com
+          scope: '@veedstudio'
+
+      # `prepare` builds dist/, so this also produces the published artifact.
+      - name: Install dependencies
+        run: npm ci
+        env:
+          CI: true
+
+      - name: Publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
